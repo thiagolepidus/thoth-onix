@@ -5,32 +5,35 @@
   
   `Mandatory` `Composable`
     
-  File information
+  File information.
   
 <details>
   <summary>Sender</summary>
   
   `Mandatory` `Composable`
   
-  Information about the entity sending the file
+  Information about the entity sending the file.
   
 <details>
   <summary>SenderName</summary>
       
   `Mandatory`
   
-  The name of the entity sending the file
+  The name of the entity sending the file.
   
 </details>
+
 <details>
   <summary>EmailAddress</summary>
 
   `Mandatory`
 
-  Email address of contact at sending entity
+  Email address of contact at sending entity.
   
 </details>
+
 </details>
+
 <details>
   <summary>SentDateTime</summary>
     
@@ -38,9 +41,12 @@
   
   Specifies the date and time when the file is being sent.
 
-  YYYYMMDDThhmmss (Date e time) format recommended
+  YYYYMMDDThhmmss (Date e time) format recommended.
+  
 </details>
+
 </details>
+
 <details>
   <summary>Product</summary>
   
@@ -55,9 +61,12 @@
 
   `Mandatory`
 
-  Identify the Information record which you send out about that product
+  Identify the information record which you send out about that product.
+
+  **ISBN** recommended.
   
 </details>
+
 <details>
   <summary>NotificationType</summary>
 
@@ -68,12 +77,13 @@
   Default: 03 (Notification confirmed on publication)
 
 </details>
+
 <details>
   <summary>ProductIdentifier</summary>
 
   `Mandatory` `Composable` `Repeatable`
 
-  An identifier of the product
+  An identifier of the product.
     
 <details>
   <summary>ProductIDType</summary>
@@ -82,7 +92,7 @@
 
   ONIX code specifying the Product Identifier type provided.
 
-  Mandatory in each occurrence of the `<ProductIdentifier>`
+  Mandatory in each occurrence of the `<ProductIdentifier>`.
 
   Available codes:
   <table>
@@ -112,6 +122,7 @@
     </tr>
   </table>
 </details>
+
 <details>
   <summary>IDTypeName</summary>
   
@@ -122,6 +133,7 @@
   Must be used when, and only when, the code in the `<ProductIDType>` element indicates a proprietary identifier (ONIX code 01).
   
 </details>
+
 <details>
   <summary>IDValue</summary>
 
@@ -132,18 +144,134 @@
   Mandatory in each occurrence of the `<ProductIdentifier>`.
   
 </details>
+
 </details>
+
 <details>
-    <summary>DescriptiveDetail</summary>
-    <details>
-        <summary>ProductComposition</summary>
-    </details>
-    <details>
-        <summary>ProductForm</summary>
-    </details>
-    <details>
-        <summary>ProductFormDetail</summary>
-    </details>
+  <summary>DescriptiveDetail</summary>
+
+  `Mandatory`
+
+  Description of the form and content of a product.
+
+  Mandatory in any `<Product>` record.
+  
+<details>
+  <summary>ProductComposition</summary>
+
+  `Mandatory`
+
+  ONIX code which indicates whether a product consists of a single item or multiple items. 
+  
+  Mandatory in an occurrence of <DescriptiveDetail>.
+
+  Only `00` (Single-component retail product) currently available.
+  
+</details>
+
+<details>
+  <summary>ProductForm</summary>
+
+  `Mandatory`
+
+  Indicates the primary form of a product.
+
+  Mandatory in an occurrence of <DescriptiveDetail>.
+
+  Available codes:
+  <table>
+    <tr>
+      <th>ONIX Code</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>AN</td>
+      <td>Downloadable and online audio file</td>
+    </tr>
+    <tr>
+      <td>BB</td>
+      <td>Hardback</td>
+    </tr>
+    <tr>
+      <td>BC</td>
+      <td>Paperback</td>
+    </tr>
+    <tr>
+      <td>EB</td>
+      <td>Digital download and online</td>
+    </tr>
+  </table>
+  
+</details>
+
+<details>
+  <summary>ProductFormDetail</summary>
+
+  `Optional`
+
+  Specifies the digital format.
+
+  Mandatory when specifying a digital `<ProductForm>` (AN and EB).
+
+  Available codes:
+
+  **AN**
+  <table>
+    <tr>
+      <th>ONIX Code</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>A103</td>
+      <td>MP3 format</td>
+    </tr>
+    <tr>
+      <td>A104</td>
+      <td>WAV format</td>
+    </tr>
+  </table>
+
+  **EB**
+  <table>
+    <tr>
+      <th>ONIX Code</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>E100</td>
+      <td>Other (use to Fiction Book)</td>
+    </tr>
+    <tr>
+      <td>E101</td>
+      <td>EPUB</td>
+    </tr>
+    <tr>
+      <td>E104</td>
+      <td>DOCX</td>
+    </tr>
+    <tr>
+      <td>E105</td>
+      <td>HTML</td>
+    </tr>
+    <tr>
+      <td>E107</td>
+      <td>PDF</td>
+    </tr>
+    <tr>
+      <td>E113</td>
+      <td>XHTML</td>
+    </tr>
+    <tr>
+      <td>E116</td>
+      <td>Amazon Kindle</td>
+    </tr>
+    <tr>
+      <td>E127</td>
+      <td>Mobipocket</td>
+    </tr>
+  </table>
+  
+</details>
     <details>
         <summary>PrimaryContentType</summary>
     </details>
