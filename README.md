@@ -150,7 +150,7 @@
 <details>
   <summary>DescriptiveDetail</summary>
 
-  `Mandatory`
+  `Mandatory` `Composable`
 
   Description of the form and content of a product.
 
@@ -159,11 +159,11 @@
 <details>
   <summary>ProductComposition</summary>
 
-  `Mandatory`
+  `Mandatory` `Composable`
 
   ONIX code which indicates whether a product consists of a single item or multiple items. 
   
-  Mandatory in an occurrence of <DescriptiveDetail>.
+  Mandatory in an occurrence of `<DescriptiveDetail>`.
 
   Only `00` (Single-component retail product) currently available.
   
@@ -176,7 +176,7 @@
 
   Indicates the primary form of a product.
 
-  Mandatory in an occurrence of <DescriptiveDetail>.
+  Mandatory in an occurrence of `<DescriptiveDetail>`.
 
   Available codes:
   <table>
@@ -272,21 +272,117 @@
   </table>
   
 </details>
-    <details>
-        <summary>PrimaryContentType</summary>
-    </details>
-    <details>
-        <summary>Measure</summary>
-        <details>
-            <summary>MeasureType</summary>
-        </details>
-        <details>
-            <summary>Measurement</summary>
-        </details>
-        <details>
-            <summary>MeasureUnitCode</summary>
-        </details>
-    </details>
+
+<details>
+  <summary>PrimaryContentType</summary>
+
+  `Mandatory`
+
+  Indicates the primary or only content type included in a product.
+
+  Only code `10` (Text eye-readable) currently available.
+  
+</details>
+
+<details>
+  <summary>Measure</summary>
+
+  `Optional` `Composable` `Repeteable`
+
+  Identifies a measurement and its units, specifying the overall dimensions of a product, including packaging.
+
+<details>
+  <summary>MeasureType</summary>
+
+  `Optional`
+
+  ONIX code indicating the dimension which is specified.
+  Mandatory in each occurrence of the `<Measure>`.
+
+  Available codes:
+  <table>
+    <tr>
+      <th>ONIX Code</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>01</td>
+      <td>Height</td>
+    </tr>
+    <tr>
+      <td>02</td>
+      <td>Width</td>
+    </tr>
+    <tr>
+      <td>03</td>
+      <td>Thickness</td>
+    </tr>
+    <tr>
+      <td>08</td>
+      <td>Unit weight</td>
+    </tr>
+  </table>
+  
+</details>
+<details>
+  <summary>Measurement</summary>
+
+  `Optional`
+
+  The value representing the `<MeasureType>` dimension in the units specified by `<MeasureUnitCode>`.
+
+  Mandatory in each occurrence of the `<Measure>`.
+  
+</details>
+<details>
+  <summary>MeasureUnitCode</summary>
+
+  `Optional`
+
+  Indicates the measure unit in which dimensions are given.
+  
+  Mandatory in each occurrence of the `<Measure>`.
+
+  Available codes:
+
+  **Height, Width and Thickness**
+  <table>
+    <tr>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>cm</td>
+      <td>Centimeters</td>
+    </tr>
+    <tr>
+      <td>mm</td>
+      <td>Millimeters</td>
+    </tr>
+    <tr>
+      <td>in</td>
+      <td>Inches (US)</td>
+    </tr>
+  </table>
+
+  **Unit weight**
+  <table>
+    <tr>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>gr</td>
+      <td>Grams</td>
+    </tr>
+    <tr>
+      <td>oz</td>
+      <td>Ounces (US)</td>
+    </tr>
+  </table>
+  
+</details>
+</details>
     <details>
         <summary>EpubLicense</summary>
         <details>
