@@ -42,49 +42,96 @@
 </details>
 </details>
 <details>
-<summary>Product</summary>
-<table>
-    <tr>
-        <td>Information about the publication</td>
-    </tr>
-    <tr>
-        <td>Required, repeatable</td>
-    </tr>
-</table>
+  <summary>Product</summary>
+  
+  `Mandatory` `Composable` `Repeatable`
+  
+  Information about the publication.
+
+  Mandatory for each publication in the file; at least one `<Product>` tag should be included per file.
+  
 <details>
-    <summary>RecordReference</summary>
-    <table>
-        <tr>
-            <td>Unique and permanent identifier the record information</td>
-        </tr>
-        <tr>
-            <td>Required</td>
-        </tr>
-    </table>
+  <summary>RecordReference</summary>
+
+  `Mandatory`
+
+  Identify the Information record which you send out about that product
+  
 </details>
 <details>
-    <summary>NotificationType</summary>
-    <table>
-        <tr>
-            <td>Indicates the type of notification or update which you are sending<br>
-            Default: 03 (Notification confirmed on publication)</td>
-        </tr>
-        <tr>
-            <td>Required</td>
-        </tr>
-    </table>
+  <summary>NotificationType</summary>
+
+  `Mandatory`
+
+  Indicates the type of notification or update which you are sending
+  
+  Default: 03 (Notification confirmed on publication)
+
 </details>
 <details>
-    <summary>ProductIdentifier</summary>
-    <details>
-        <summary>ProductIDType</summary>
-    </details>
-    <details>
-        <summary>IDTypeName</summary>
-    </details>
-    <details>
-        <summary>IDValue</summary>
-    </details>
+  <summary>ProductIdentifier</summary>
+
+  `Mandatory` `Composable` `Repeatable`
+
+  An identifier of the product
+    
+<details>
+  <summary>ProductIDType</summary>
+  
+  `Mandatory`
+
+  ONIX code specifying the Product Identifier type provided.
+
+  Mandatory in each occurrence of the `<ProductIdentifier>`
+
+  Available codes:
+  <table>
+    <tr>
+      <th>ONIX Code</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>01</td>
+      <td>Proprietary</td>
+    </tr>
+    <tr>
+      <td>06</td>
+      <td>DOI</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>LCCN</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>ISBN-13</td>
+    </tr>
+    <tr>
+      <td>23</td>
+      <td>OCLC</td>
+    </tr>
+  </table>
+</details>
+<details>
+  <summary>IDTypeName</summary>
+  
+  `Optional`
+  
+  A name which identifies a proprietary identifier.
+  
+  Must be used when, and only when, the code in the `<ProductIDType>` element indicates a proprietary identifier (ONIX code 01).
+  
+</details>
+<details>
+  <summary>IDValue</summary>
+
+  `Mandatory`
+
+  The identifier value of the type specified in the `<ProductIDType>` element.
+  
+  Mandatory in each occurrence of the `<ProductIdentifier>`.
+  
+</details>
 </details>
 <details>
     <summary>DescriptiveDetail</summary>
