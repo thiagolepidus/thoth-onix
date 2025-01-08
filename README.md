@@ -88,11 +88,11 @@
 <details>
   <summary>ProductIDType</summary>
   
-  `Mandatory`
+  `Mandatory in composite`
 
   ONIX code specifying the Product Identifier type provided.
 
-  Mandatory in each occurrence of the `<ProductIdentifier>`.
+  Mandatory in each occurrence of the `<ProductIdentifier>` composite.
 
   Available codes:
   <table>
@@ -137,11 +137,11 @@
 <details>
   <summary>IDValue</summary>
 
-  `Mandatory`
+  `Mandatory in composite`
 
   The identifier value of the type specified in the `<ProductIDType>` element.
   
-  Mandatory in each occurrence of the `<ProductIdentifier>`.
+  Mandatory in each occurrence of the `<ProductIdentifier>` composite.
   
 </details>
 
@@ -163,7 +163,7 @@
 
   ONIX code which indicates whether a product consists of a single item or multiple items. 
   
-  Mandatory in an occurrence of `<DescriptiveDetail>`.
+  Mandatory in an occurrence of `<DescriptiveDetail>` composite.
 
   Only `00` (Single-component retail product) currently available.
   
@@ -176,7 +176,7 @@
 
   Indicates the primary form of a product.
 
-  Mandatory in an occurrence of `<DescriptiveDetail>`.
+  Mandatory in an occurrence of `<DescriptiveDetail>` composite.
 
   Available codes:
   <table>
@@ -294,10 +294,11 @@
 <details>
   <summary>MeasureType</summary>
 
-  `Optional`
+  `Mandatory in composite`
 
   ONIX code indicating the dimension which is specified.
-  Mandatory in each occurrence of the `<Measure>`.
+  
+  Mandatory in each occurrence of the `<Measure>` composite.
 
   Available codes:
   <table>
@@ -327,21 +328,21 @@
 <details>
   <summary>Measurement</summary>
 
-  `Optional`
+  `Mandatory in composite`
 
   The value representing the `<MeasureType>` dimension in the units specified by `<MeasureUnitCode>`.
 
-  Mandatory in each occurrence of the `<Measure>`.
+  Mandatory in each occurrence of the `<Measure>` composite.
   
 </details>
 <details>
   <summary>MeasureUnitCode</summary>
 
-  `Optional`
+  `Mandatory in composite`
 
   Indicates the measure unit in which dimensions are given.
   
-  Mandatory in each occurrence of the `<Measure>`.
+  Mandatory in each occurrence of the `<Measure>` composite.
 
   Available codes:
 
@@ -382,7 +383,9 @@
   </table>
   
 </details>
+
 </details>
+
 <details>
   <summary>EpubLicense</summary>
   
@@ -393,441 +396,501 @@
 <details>
   <summary>EpubLicenseName</summary>
 
-  `Optional`
+  `Mandatory in composite`
 
   The name or title of the license. 
   
-  Mandatory in any `<EpubLicense>`.
+  Mandatory in any `<EpubLicense>` composite.
+  
+</details>
+
+<details>
+  <summary>EpubLicenseExpression</summary>
+
+  `Mandatory in composite` `Composite`
+
+  Details a link to an expression of the license terms.
+  
+<details>
+  <summary>EpubLicenseExpressionType</summary>
+
+  `Mandatory in composite`
+
+  ONIX code identifying the nature or format of the license expression specified.
+
+  Only code `02` (Professional readable) currently available.
+  
+</details>
+
+<details>
+  <summary>EpubLicenseExpressionLink</summary>
+
+  `Mandatory in composite`
+
+  The URI for the license expression.
+  
+</details>
+
+</details>
 </details>
 <details>
-    <summary>EpubLicenseExpression</summary>
-    <details>
-        <summary>EpubLicenseExpressionType</summary>
-    </details>
-    <details>
-        <summary>EpubLicenseExpressionLink</summary>
-    </details>
-</details>  
-    </details>
-    <details>
-        <summary>TitleDetail</summary>
-        <details>
-            <summary>TitleType</summary>
-        </details>
-        <details>
-            <summary>TitleElement</summary>
-            <details>
-                <summary>TitleElementLevel</summary>
-            </details>
-            <details>
-                <summary>TitleText</summary>
-            </details>
-            <details>
-                <summary>Subtitle</summary>
-            </details>
-        </details>
-    </details>
-    <details>
-        <summary>Contributor</summary>
-        <details>
-            <summary>SequenceNumber</summary>
-        </details>
-        <details>
-            <summary>ContributorRole</summary>
-        </details>
-        <details>
-            <summary>NameIdentifier</summary>
-            <details>
-                <summary>NameIDType</summary>
-            </details>
-            <details>
-                <summary>IDValue</summary>
-            </details>
-        </details>
-        <details>
-            <summary>PersonName</summary>
-        </details>
-        <details>
-            <summary>NamesBeforeKey</summary>
-        </details>
-        <details>
-            <summary>KeyNames</summary>
-        </details>
-        <details>
-            <summary>ProfessionalAffiliation</summary>
-            <details>
-                <summary>ProfessionalPosition</summary>
-            </details>
-            <details>
-                <summary>Affiliation</summary>
-            </details>
-        </details>
-        <details>
-            <summary>BiographicalNote</summary>
-        </details>
-        <details>
-            <summary>Website</summary>
-            <details>
-                <summary>WebsiteRole</summary>
-            </details>
-            <details>
-                <summary>WebsiteDescription</summary>
-            </details>
-            <details>
-                <summary>WebsiteLink</summary>
-            </details>
-        </details>
-    </details>
-    <details>
-        <summary>Edition</summary>
-        <details>
-            <summary>EditionNumber</summary>
-        </details>
-    </details>
-    <details>
-        <summary>Language</summary>
-        <details>
-            <summary>LanguageRole</summary>
-        </details>
-        <details>
-            <summary>LanguageCode</summary>
-        </details>
-    </details>
-    <details>
-        <summary>Extent</summary>
-        <details>
-            <summary>ExtentType</summary>
-        </details>
-        <details>
-            <summary>ExtentValue</summary>
-        </details>
-        <details>
-            <summary>ExtentUnit</summary>
-        </details>
-    </details>
-    <details>
-        <summary>IllustrationsNote</summary>
-    </details>
-    <details>
-        <summary>AncillaryContent</summary>
-        <details>
-            <summary>AncillaryContentType</summary>
-        </details>
-        <details>
-            <summary>AncillaryContentDescription</summary>
-        </details>
-        <details>
-            <summary>Number</summary>
-        </details>
-    </details>
-    <details>
-        <summary>Subject</summary>
-        <details>
-            <summary>MainSubject</summary>
-        </details>
-        <details>
-            <summary>SubjectSchemeIdentifier</summary>
-        </details>
-        <details>
-            <summary>SubjectHeadingText</summary>
-        </details>
-        <details>
-            <summary>SubjectCode</summary>
-        </details>
-    </details>
-    <details>
-        <summary>Audience</summary>
-        <details>
-            <summary>AudienceCodeType</summary>
-        </details>
-        <details>
-            <summary>AudienceCodeValue</summary>
-        </details>
-    </details>
+  <summary>TitleDetail</summary>
+  
+  `Mandatory` `Composite`
+
+  Title of the product described in the record.
+  
+<details>
+  
+  <summary>TitleType</summary>
+  
+  `Mandatory in composite`
+
+  ONIX code indicating the type of a title.
+  
+  Only code `02` (Distinctive title (book)) currently available.
+  
 </details>
 <details>
-    <summary>CollateralDetail</summary>
-    <details>
-        <summary>TextContent</summary>
-        <details>
-            <summary>TextType</summary>
-        </details>
-        <details>
-            <summary>ContentAudience</summary>
-        </details>
-        <details>
-            <summary>Text</summary>
-        </details>
-    </details>
-    <details>
-        <summary>SupportingResource</summary>
-        <details>
-            <summary>ResourceContentType</summary>
-        </details>
-        <details>
-            <summary>ContentAudience</summary>
-        </details>
-        <details>
-            <summary>ResourceMode</summary>
-        </details>
-        <details>
-            <summary>ResourceFeature</summary>
-            <details>
-                <summary>ResourceFeatureType</summary>
-            </details>
-            <details>
-                <summary>FeatureNote</summary>
-            </details>
-        </details>
-        <details>
-            <summary>ResourceVersion</summary>
-            <details>
-                <summary>ResourceForm</summary>
-            </details>
-            <details>
-                <summary>ResourceLink</summary>
-            </details>
-        </details>
-    </details>
+  <summary>TitleElement</summary>
+
+  `Mandatory in composite` `Composite`
+
+  Group of elements representing the title element.
+  
+<details>
+  <summary>TitleElementLevel</summary>
+
+  `Mandatory in composite`
+
+  ONIX code indicating the level of a title element.
+
+  Only code `01` (Product) currently available.
+  
+</details>
+
+<details>
+  <summary>TitleText</summary>
+
+  `Mandatory in composite`
+
+  The text of a title element, excluding any subtitle.
+  
 </details>
 <details>
-    <summary>ContentDetail</summary>
-    <details>
-        <summary>ContentItem</summary>
-        <details>
-            <summary>LevelSequenceNumber</summary>
-        </details>
-    </details>
-    <details>
-        <summary>TextItem</summary>
-        <details>
-            <summary>TextItemType</summary>
-        </details>
-        <details>
-            <summary>TextItemIdentifier</summary>
-            <details>
-                <summary>TextItemIDType</summary>
-            </details>
-            <details>
-                <summary>IDValue</summary>
-            </details>
-        </details>
-    </details>
-    <details>
-        <summary>PageRun</summary>
-        <details>
-            <summary>FirstPageNumber</summary>
-        </details>
-        <details>
-            <summary>LastPageNumber</summary>
-        </details>
-    </details>
-    <details>
-        <summary>NumberOfPages</summary>
-    </details>
+  <summary>Subtitle</summary>
+
+  `Optional`
+
+  The text of a subtitle.
+  
+</details>
+
+</details>
+
+</details>
+
+<details>
+<summary>Contributor</summary>
+<details>
+<summary>SequenceNumber</summary>
 </details>
 <details>
-    <summary>PublishingDetail</summary>
-    <details>
-        <summary>Imprint</summary>
-        <details>
-            <summary>ImprintName</summary>
-            <details>
-                <summary>ImprintIdentifier</summary>
-                <details>
-                    <summary>ImprintIDType</summary>
-                </details>
-                <details>
-                    <summary>IDTypeName</summary>
-                </details>
-                <details>
-                    <summary>IDValue</summary>
-                </details>
-            </details>
-        </details>
-    </details>
-    <details>
-        <summary>Publisher</summary>
-        <details>
-            <summary>PublishingRole</summary>
-        </details>
-        <details>
-            <summary>PublisherIdentifier</summary>
-            <details>
-                <summary>PublisherIDType</summary>
-            </details>
-            <details>
-                <summary>IDValue</summary>
-            </details>
-        </details>
-        <details>
-            <summary>PublisherName</summary>
-        </details>
-        <details>
-            <summary>Website</summary>
-            <details>
-                <summary>WebsiteRole</summary>
-            </details>
-            <details>
-                <summary>WebsiteDescription</summary>
-            </details>
-            <details>
-                <summary>WebsiteLink</summary>
-            </details>
-        </details>
-        <details>
-            <summary>Funding</summary>
-            <details>
-                <summary>FundingIdentifier</summary>
-                <details>
-                    <summary>FundingIDType</summary>
-                </details>
-                <details>
-                    <summary>IDTypeName</summary>
-                </details>
-                <details>
-                    <summary>IDValue</summary>
-                </details>
-            </details>
-        </details>
-    </details>
-    <details>
-        <summary>CityOfPublication</summary>
-    </details>
-    <details>
-        <summary>PublishingStatus</summary>
-    </details>
-    <details>
-        <summary>PublishingDate</summary>
-        <details>
-            <summary>PublishingDateRole</summary>
-        </details>
-        <details>
-            <summary>Date</summary>
-        </details>
-    </details>
-    <details>
-        <summary>CopyrightStatement</summary>
-        <details>
-            <summary>CopyrightOwner</summary>
-            <details>
-                <summary>PersonName</summary>
-            </details>
-        </details>
-    </details>
-    <details>
-        <summary>SalesRights</summary>
-        <details>
-            <summary>SalesRightsType</summary>
-        </details>
-        <details>
-            <summary>Territory</summary>
-            <details>
-                <summary>RegionsIncluded</summary>
-            </details>
-        </details>
-    </details>
+<summary>ContributorRole</summary>
 </details>
 <details>
-    <summary>RelatedMaterial</summary>
-    <details>
-        <summary>RelatedWork</summary>
-        <details>
-            <summary>WorkRelationCode</summary>
-        </details>
-        <details>
-            <summary>WorkIdentifier</summary>
-            <details>
-                <summary>WorkIDType</summary>
-            </details>
-            <details>
-                <summary>IDValue</summary>
-            </details>
-        </details>
-    </details>
-    <details>
-        <summary>RelatedProduct</summary>
-        <details>
-            <summary>ProductRelationCode</summary>
-        </details>
-        <details>
-            <summary>ProductIdentifier</summary>
-            <details>
-                <summary>ProductIDType</summary>
-            </details>
-            <details>
-                <summary>IDTypeName</summary>
-            </details>
-            <details>
-                <summary>IDValue</summary>
-            </details>
-        </details>
-    </details>
+<summary>NameIdentifier</summary>
+<details>
+<summary>NameIDType</summary>
 </details>
 <details>
-    <summary>ProductSupply</summary>
-    <details>
-        <summary>Market</summary>
-        <details>
-            <summary>Territory</summary>
-            <details>
-                <summary>RegionsIncluded</summary>
-            </details>
-        </details>
-    </details>
-    <details>
-        <summary>SupplyDetail</summary>
-        <details>
-            <summary>Supplier</summary>
-            <details>
-                <summary>SupplierRole</summary>
-            </details>
-            <details>
-                <summary>SupplierName</summary>
-            </details>
-            <details>
-                <summary>Website</summary>
-                <details>
-                    <summary>WebsiteRole</summary>
-                </details>
-                <details>
-                    <summary>WebsiteDescription</summary>
-                </details>
-                <details>
-                    <summary>WebsiteLink</summary>
-                </details>
-            </details>
-        </details>
-        <details>
-            <summary>ProductAvailability</summary>
-        </details>
-        <details>
-            <summary>SupplyDate</summary>
-            <details>
-                <summary>SupplyDateRole</summary>
-            </details>
-        </details>
-        <details>
-            <summary>UnpricedItemType</summary>
-        </details>
-        <details>
-            <summary>Price</summary>
-            <details>
-                <summary>PriceType</summary>
-            </details>
-            <details>
-                <summary>PriceAmount</summary>
-            </details>
-            <details>
-                <summary>CurrencyCode</summary>
-            </details>
-            <details>
-                <summary>Territory</summary>
-                <details>
-                    <summary>RegionsIncluded</summary>
-                </details>
-            </details>
-        </details>
-    </details>
+<summary>IDValue</summary>
+</details>
+</details>
+<details>
+<summary>PersonName</summary>
+</details>
+<details>
+<summary>NamesBeforeKey</summary>
+</details>
+<details>
+<summary>KeyNames</summary>
+</details>
+<details>
+<summary>ProfessionalAffiliation</summary>
+<details>
+<summary>ProfessionalPosition</summary>
+</details>
+<details>
+<summary>Affiliation</summary>
+</details>
+</details>
+<details>
+<summary>BiographicalNote</summary>
+</details>
+<details>
+<summary>Website</summary>
+<details>
+<summary>WebsiteRole</summary>
+</details>
+<details>
+<summary>WebsiteDescription</summary>
+</details>
+<details>
+<summary>WebsiteLink</summary>
+</details>
+</details>
+</details>
+<details>
+<summary>Edition</summary>
+<details>
+<summary>EditionNumber</summary>
+</details>
+</details>
+<details>
+<summary>Language</summary>
+<details>
+<summary>LanguageRole</summary>
+</details>
+<details>
+<summary>LanguageCode</summary>
+</details>
+</details>
+<details>
+<summary>Extent</summary>
+<details>
+<summary>ExtentType</summary>
+</details>
+<details>
+<summary>ExtentValue</summary>
+</details>
+<details>
+<summary>ExtentUnit</summary>
+</details>
+</details>
+<details>
+<summary>IllustrationsNote</summary>
+</details>
+<details>
+<summary>AncillaryContent</summary>
+<details>
+<summary>AncillaryContentType</summary>
+</details>
+<details>
+<summary>AncillaryContentDescription</summary>
+</details>
+<details>
+<summary>Number</summary>
+</details>
+</details>
+<details>
+<summary>Subject</summary>
+<details>
+<summary>MainSubject</summary>
+</details>
+<details>
+<summary>SubjectSchemeIdentifier</summary>
+</details>
+<details>
+<summary>SubjectHeadingText</summary>
+</details>
+<details>
+<summary>SubjectCode</summary>
+</details>
+</details>
+<details>
+<summary>Audience</summary>
+<details>
+<summary>AudienceCodeType</summary>
+</details>
+<details>
+<summary>AudienceCodeValue</summary>
+</details>
+</details>
+</details>
+<details>
+<summary>CollateralDetail</summary>
+<details>
+<summary>TextContent</summary>
+<details>
+<summary>TextType</summary>
+</details>
+<details>
+<summary>ContentAudience</summary>
+</details>
+<details>
+<summary>Text</summary>
+</details>
+</details>
+<details>
+<summary>SupportingResource</summary>
+<details>
+<summary>ResourceContentType</summary>
+</details>
+<details>
+<summary>ContentAudience</summary>
+</details>
+<details>
+<summary>ResourceMode</summary>
+</details>
+<details>
+<summary>ResourceFeature</summary>
+<details>
+<summary>ResourceFeatureType</summary>
+</details>
+<details>
+<summary>FeatureNote</summary>
+</details>
+</details>
+<details>
+<summary>ResourceVersion</summary>
+<details>
+<summary>ResourceForm</summary>
+</details>
+<details>
+<summary>ResourceLink</summary>
+</details>
+</details>
+</details>
+</details>
+<details>
+<summary>ContentDetail</summary>
+<details>
+<summary>ContentItem</summary>
+<details>
+<summary>LevelSequenceNumber</summary>
+</details>
+</details>
+<details>
+<summary>TextItem</summary>
+<details>
+<summary>TextItemType</summary>
+</details>
+<details>
+<summary>TextItemIdentifier</summary>
+<details>
+<summary>TextItemIDType</summary>
+</details>
+<details>
+<summary>IDValue</summary>
+</details>
+</details>
+</details>
+<details>
+<summary>PageRun</summary>
+<details>
+<summary>FirstPageNumber</summary>
+</details>
+<details>
+<summary>LastPageNumber</summary>
+</details>
+</details>
+<details>
+<summary>NumberOfPages</summary>
+</details>
+</details>
+<details>
+<summary>PublishingDetail</summary>
+<details>
+<summary>Imprint</summary>
+<details>
+<summary>ImprintName</summary>
+<details>
+<summary>ImprintIdentifier</summary>
+<details>
+<summary>ImprintIDType</summary>
+</details>
+<details>
+<summary>IDTypeName</summary>
+</details>
+<details>
+<summary>IDValue</summary>
+</details>
+</details>
+</details>
+</details>
+<details>
+<summary>Publisher</summary>
+<details>
+<summary>PublishingRole</summary>
+</details>
+<details>
+<summary>PublisherIdentifier</summary>
+<details>
+<summary>PublisherIDType</summary>
+</details>
+<details>
+<summary>IDValue</summary>
+</details>
+</details>
+<details>
+<summary>PublisherName</summary>
+</details>
+<details>
+<summary>Website</summary>
+<details>
+<summary>WebsiteRole</summary>
+</details>
+<details>
+<summary>WebsiteDescription</summary>
+</details>
+<details>
+<summary>WebsiteLink</summary>
+</details>
+</details>
+<details>
+<summary>Funding</summary>
+<details>
+<summary>FundingIdentifier</summary>
+<details>
+<summary>FundingIDType</summary>
+</details>
+<details>
+<summary>IDTypeName</summary>
+</details>
+<details>
+<summary>IDValue</summary>
+</details>
+</details>
+</details>
+</details>
+<details>
+<summary>CityOfPublication</summary>
+</details>
+<details>
+<summary>PublishingStatus</summary>
+</details>
+<details>
+<summary>PublishingDate</summary>
+<details>
+<summary>PublishingDateRole</summary>
+</details>
+<details>
+<summary>Date</summary>
+</details>
+</details>
+<details>
+<summary>CopyrightStatement</summary>
+<details>
+<summary>CopyrightOwner</summary>
+<details>
+<summary>PersonName</summary>
+</details>
+</details>
+</details>
+<details>
+<summary>SalesRights</summary>
+<details>
+<summary>SalesRightsType</summary>
+</details>
+<details>
+<summary>Territory</summary>
+<details>
+<summary>RegionsIncluded</summary>
+</details>
+</details>
+</details>
+</details>
+<details>
+<summary>RelatedMaterial</summary>
+<details>
+<summary>RelatedWork</summary>
+<details>
+<summary>WorkRelationCode</summary>
+</details>
+<details>
+<summary>WorkIdentifier</summary>
+<details>
+<summary>WorkIDType</summary>
+</details>
+<details>
+<summary>IDValue</summary>
+</details>
+</details>
+</details>
+<details>
+<summary>RelatedProduct</summary>
+<details>
+<summary>ProductRelationCode</summary>
+</details>
+<details>
+<summary>ProductIdentifier</summary>
+<details>
+<summary>ProductIDType</summary>
+</details>
+<details>
+<summary>IDTypeName</summary>
+</details>
+<details>
+<summary>IDValue</summary>
+</details>
+</details>
+</details>
+</details>
+<details>
+<summary>ProductSupply</summary>
+<details>
+<summary>Market</summary>
+<details>
+<summary>Territory</summary>
+<details>
+<summary>RegionsIncluded</summary>
+</details>
+</details>
+</details>
+<details>
+<summary>SupplyDetail</summary>
+<details>
+<summary>Supplier</summary>
+<details>
+<summary>SupplierRole</summary>
+</details>
+<details>
+<summary>SupplierName</summary>
+</details>
+<details>
+<summary>Website</summary>
+<details>
+<summary>WebsiteRole</summary>
+</details>
+<details>
+<summary>WebsiteDescription</summary>
+</details>
+<details>
+<summary>WebsiteLink</summary>
+</details>
+</details>
+</details>
+<details>
+<summary>ProductAvailability</summary>
+</details>
+<details>
+<summary>SupplyDate</summary>
+<details>
+<summary>SupplyDateRole</summary>
+</details>
+</details>
+<details>
+<summary>UnpricedItemType</summary>
+</details>
+<details>
+<summary>Price</summary>
+<details>
+<summary>PriceType</summary>
+</details>
+<details>
+<summary>PriceAmount</summary>
+</details>
+<details>
+<summary>CurrencyCode</summary>
+</details>
+<details>
+<summary>Territory</summary>
+<details>
+<summary>RegionsIncluded</summary>
+</details>
+</details>
+</details>
+</details>
 </details>
 </details>
