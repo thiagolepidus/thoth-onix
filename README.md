@@ -3,14 +3,14 @@
 <details>
   <summary>Header</summary>
   
-  `Mandatory` `Composable`
+  `Mandatory` `Composite`
     
   File information.
   
 <details>
   <summary>Sender</summary>
   
-  `Mandatory` `Composable`
+  `Mandatory` `Composite`
   
   Information about the entity sending the file.
   
@@ -50,7 +50,7 @@
 <details>
   <summary>Product</summary>
   
-  `Mandatory` `Composable` `Repeatable`
+  `Mandatory` `Composite` `Repeatable`
   
   Information about the publication.
 
@@ -81,7 +81,7 @@
 <details>
   <summary>ProductIdentifier</summary>
 
-  `Mandatory` `Composable` `Repeatable`
+  `Mandatory` `Composite` `Repeatable`
 
   An identifier of the product.
     
@@ -150,7 +150,7 @@
 <details>
   <summary>DescriptiveDetail</summary>
 
-  `Mandatory` `Composable`
+  `Mandatory` `Composite`
 
   Description of the form and content of a product.
 
@@ -159,7 +159,7 @@
 <details>
   <summary>ProductComposition</summary>
 
-  `Mandatory` `Composable`
+  `Mandatory` `Composite`
 
   ONIX code which indicates whether a product consists of a single item or multiple items. 
   
@@ -287,7 +287,7 @@
 <details>
   <summary>Measure</summary>
 
-  `Optional` `Composable` `Repeteable`
+  `Optional` `Composite` `Repeteable`
 
   Identifies a measurement and its units, specifying the overall dimensions of a product, including packaging.
 
@@ -383,20 +383,31 @@
   
 </details>
 </details>
+<details>
+  <summary>EpubLicense</summary>
+  
+  `Optional` `Composite`
+  
+  Name or title of the license governing use of the product, and a link to the license terms in eye-readable or machine-readable form.
+  
+<details>
+  <summary>EpubLicenseName</summary>
+
+  `Optional`
+
+  The name or title of the license. 
+  
+  Mandatory in any `<EpubLicense>`.
+</details>
+<details>
+    <summary>EpubLicenseExpression</summary>
     <details>
-        <summary>EpubLicense</summary>
-        <details>
-            <summary>EpubLicenseName</summary>
-        </details>
-        <details>
-            <summary>EpubLicenseExpression</summary>
-            <details>
-                <summary>EpubLicenseExpressionType</summary>
-            </details>
-            <details>
-                <summary>EpubLicenseExpressionLink</summary>
-            </details>
-        </details>  
+        <summary>EpubLicenseExpressionType</summary>
+    </details>
+    <details>
+        <summary>EpubLicenseExpressionLink</summary>
+    </details>
+</details>  
     </details>
     <details>
         <summary>TitleDetail</summary>
