@@ -73,8 +73,8 @@
   `Mandatory`
 
   Indicates the type of notification or update which you are sending
-  
-  Default: 03 (Notification confirmed on publication)
+
+  Only code `03` (Notification confirmed on publication) currently available.
 
 </details>
 
